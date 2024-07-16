@@ -10,12 +10,20 @@ class SettingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.green[200],
-        child: const Center(
-          child: Text('Setting'),
+        color: Colors.red[200],
+        child: Center(
+          child: Container(
+            padding: EdgeInsets.all(50),
+            decoration: BoxDecoration(
+              color: Colors.blue[300],
+              border: Border.all(
+                  color: Colors.blue,
+                  width: 2.0
+              ),
+            ),
+            child: Text('Setting'),),
         ),
       ),
-
     );
   }
 }
