@@ -24,9 +24,25 @@ class HomeScreen extends StatelessWidget {
             homeIndex: 0,
             duration: Duration(milliseconds: 400),
             ///TODO: add animation
+            transitionBuilder: (context, child, animation){
+              dashboardTabsRouter = AutoTabsRouter.of(context);
+              int currentIndex = dashboardTabsRouter.activeIndex;
+              int previousIndex = dashboardTabsRouter.previousIndex??0;
+
+              bool isTransitionToRight = currentIndex > previousIndex;
+              return SlideTransition(
+                  position:
+                  Tween<Offset>(
+                    begin: (isTransitionToRight ? Offset(1.0, 0.0) : Offset(-1.0, 0.0)),
+                    end: Offset(0.0, 0.0),
+                  ).animate(animation),
+                child: child,
+              );
+            },
             builder: (context, child){
               dashboardTabsRouter = AutoTabsRouter.of(context);
                 return Scaffold(
+                  backgroundColor: Colors.red[200],
                   body: child,
                   bottomNavigationBar: BottomTabNavigationBar(),
                 );

@@ -11,8 +11,17 @@ class HomeBodyScreen extends StatelessWidget {
     return Scaffold(
       body: Container(
         color: Colors.red[200],
-        child: const Center(
-          child: Text('Home'),
+        child: Center(
+          child: Container(
+            padding: EdgeInsets.all(50),
+            decoration: BoxDecoration(
+              color: Colors.green[300],
+              border: Border.all(
+                  color: Colors.green,
+                  width: 2.0
+              ),
+            ),
+            child: Text('Home'),),
         ),
       ),
     );

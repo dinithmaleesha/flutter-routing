@@ -10,12 +10,20 @@ class SearchScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.blue[200],
-        child: const Center(
-          child: Text('Search'),
+        color: Colors.red[200],
+        child: Center(
+            child: Container(
+              padding: EdgeInsets.all(50),
+              decoration: BoxDecoration(
+                color: Colors.red[300],
+                border: Border.all(
+                  color: Colors.red,
+                  width: 2.0
+                ),
+              ),
+              child: Text('Search'),),
+          ),
         ),
-      ),
-
     );
   }
 }
