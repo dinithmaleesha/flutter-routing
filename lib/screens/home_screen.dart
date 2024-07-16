@@ -23,6 +23,7 @@ class HomeScreen extends StatelessWidget {
             ],
             homeIndex: 0,
             duration: Duration(milliseconds: 400),
+            ///TODO: add animation
             builder: (context, child){
               dashboardTabsRouter = AutoTabsRouter.of(context);
                 return Scaffold(
